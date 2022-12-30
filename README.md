@@ -15,4 +15,6 @@ while DoubleSpec does?
 
 ## A solution
 
-Use a combination of test tags and a multi-part sbt script.
+Use a combination of test tags and a multi-part sbt script. Run
+
+```./runtests.sh```
