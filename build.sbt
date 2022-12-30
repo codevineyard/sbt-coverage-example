@@ -9,6 +9,15 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.14" % Test
     ),
+    commands += Command.command("testWithSmartCoverage") { state =>
+      "clean" ::
+        "set coverageEnabled := true" ::
+        "testOnly * -- -l ExcludeFromCoverage" ::
+        "set coverageEnabled := false" ::
+        "testOnly * -- -n ExcludeFromCoverage" ::
+        "coverageReport" ::
+        state
+    },
     coverageMinimumStmtTotal := 80.0,
     coverageFailOnMinimum := true
   )
