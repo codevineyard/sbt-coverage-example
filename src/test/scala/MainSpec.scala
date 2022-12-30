@@ -8,7 +8,7 @@ class MainSpec extends AnyFlatSpec {
 
   def getTypeTag[T: TypeTag](obj: T): TypeTag[T] = typeTag[T]
 
-  "double" should "return an Int" in {
+  "double" should "return an Int" taggedAs ExcludeFromCoverage in {
     assertResult("Int")(getTypeTag(Main.double(1)).tpe.toString)
   }
 

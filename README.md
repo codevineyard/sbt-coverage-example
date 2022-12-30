@@ -12,3 +12,7 @@ is commented out.
 
 How can the project be changed so that MainSpec does not affect coverage,
 while DoubleSpec does?
+
+## A solution
+
+Use a combination of test tags and a multi-part sbt script.
